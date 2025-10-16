@@ -1,0 +1,92 @@
+/* ---------------------------------
+  GLOBAL VARIABLES & RESET (New Palette)
+  ---------------------------------
+  Palette: Modern & Professional
+  - A dark, slate blue header for a premium feel.
+  - A light, soft gray for the page background.
+  - A vibrant blue for accents and calls-to-action.
+  - Off-white text for high readability on the dark header.
+*/
+:root {
+  --header-bg: #2c3e50;           /* Dark Slate Blue */
+  --body-bg: #f4f6f8;             /* Soft Light Gray */
+  --primary-color: #3498db;       /* Vibrant Blue */
+  --primary-hover-color: #5dade2; /* Lighter Blue for hover */
+  --text-color-light: #ecf0f1;    /* Off-white for dark backgrounds */
+  --text-color-dark: #34495e;     /* Muted dark blue for light backgrounds */
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  background-color: var(--body-bg);
+  color: var(--text-color-dark); /* Set default text color for the page */
+}
+
+/* ---------------------------------
+  HEADER & NAVBAR STYLING
+  --------------------------------- */
+.main-header {
+  background-color: var(--header-bg);
+  /* For dark headers, a bottom border often looks cleaner than a shadow */
+  border-bottom: 2px solid var(--primary-color);
+  padding: 0 40px;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 70px;
+}
+
+/* ---------------------------------
+  LOGO & NAVIGATION LINKS
+  --------------------------------- */
+.nav-logo {
+  text-decoration: none;
+  color: var(--text-color-light); /* Use light text on the dark header */
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.nav-menu {
+  list-style: none;
+  display: flex;
+  gap: 35px;
+}
+
+.nav-menu a {
+  text-decoration: none;
+  color: var(--text-color-light); /* Use light text on the dark header */
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.nav-menu a:hover {
+  color: var(--primary-color); /* On hover, use the accent color */
+}
+
+/* ---------------------------------
+  CALL-TO-ACTION BUTTON
+  --------------------------------- */
+.nav-button {
+  text-decoration: none;
+  color: #fff;
+  background-color: var(--primary-color);
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.nav-button:hover {
+  background-color: var(--primary-hover-color);
+  transform: translateY(-2px); /* Add a subtle lift effect */
+}
+

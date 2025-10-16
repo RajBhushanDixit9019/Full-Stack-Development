@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Customer Feedback Form</title>
+  </head>
+  <body>
+    <div>
+      <h1>Customer Feedback Form</h1>
+    </div>
+    <div>
+      <form action="#">
+        <div>
+          <p>Rate Your overall Experience with us</p>
+          <label>
+            <input type="radio" name="rating" value="Excellent" /> Excellent
+          </label>
+          <label>
+            <input type="radio" name="rating" value="Good" /> Good
+          </label>
+          <label>
+            <input type="radio" name="rating" value="Average" /> Average
+          </label>
+          <label>
+            <input type="radio" name="rating" value="Poor" /> Poor
+          </label>
+        </div><br>
+
+        <div>
+            <label for="product">Select Product:</label>
+            <select name="product" id="product">
+                <option value="null">--Select--</option>
+                <option value="Product A">Product A</option>
+                <option value="Product B">Product B</option>
+                <option value="Product C">Product C</option>
+            </select>
+        </div><br>
+
+        <div>
+            <button type="submit">Submit</button>
+        </div>
+      </form>
+    </div>
+  </body>
+</html>

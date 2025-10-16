@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Box-Sizing Difference</title>
+    <style>
+      * {
+        /* A universal reset is good practice, but for this demo, 
+           we will let each box define its own box-sizing. */
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        font-family: Arial, sans-serif;
+        padding: 20px;
+        background-color: #f0f0f0;
+      }
+      .container {
+        border: 2px solid #333;
+        border-radius: 5px;
+        padding: 10px;
+        margin: 10px;
+        /* I corrected a typo here: "widows" should be "width".
+           However, for a flex container, width isn't always necessary. */
+        /* width: 200px; */
+        background-color: #fff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: row;
+        gap: 20px;
+      }
+      .box-label {
+        font-weight: bold;
+        text-align: center;
+        margin-bottom: 10px;
+        font-size: 0.9em;
+        color: #555;
+      }
+      .box1 {
+        /*
+          box-sizing: content-box; (Default)
+          The width (100px) applies ONLY to the content.
+          Padding and border are ADDED ON TOP of the width.
+          Total Width = 100px (content) + 40px (padding) + 4px (border) = 144px
+        */
+        box-sizing: content-box;
+        border: 2px solid blue;
+        padding: 20px;
+        margin: 10px;
+        width: 100px;
+        background-color: #e0e8ff;
+      }
+      .box2 {
+        /*
+          box-sizing: border-box;
+          The width (100px) applies to the ENTIRE BOX, including padding and border.
+          The content area shrinks to make room.
+          Total Width = 100px
+        */
+        box-sizing: border-box;
+        border: 2px solid green;
+        padding: 20px;
+        margin: 10px;
+        width: 100px;
+        background-color: #dfffe0;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="box1">
+        <p class="box-label">box-sizing: content-box<br />(Total Width: 144px)</p>
+        <p>This is box 1</p>
+      </div>
+      <div class="box2">
+        <p class="box-label">box-sizing: border-box<br />(Total Width: 100px)</p>
+        <p>This is box 2</p>
+      </div>
+    </div>
+  </body>
+</html>

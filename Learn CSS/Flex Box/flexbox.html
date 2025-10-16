@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Flex Box in CSS</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: Arial, sans-serif;
+      }
+      body {
+        padding: 20px;
+        background-color: #e0e0e0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+      .heading {
+        text-align: center;
+        margin: 20px 0;
+        color: #333;
+      }
+      .subheading {
+        text-align: left;
+        margin: 20px 0;
+        /* Aligns the subheading to the start of the containers */
+        align-self: flex-start; 
+        width: 100%; /* Ensure it spans the width for alignment */
+        max-width: 1024px; /* Optional: set a max-width for larger screens */
+      }
+      .row-container {
+        display: flex; /* This is the magic property! */
+        background-color: #f2f2f2;
+        padding: 10px;
+        border: 1px solid #ccc;
+        flex-direction: row; 
+        justify-content: space-around; /* Distributes space around items */
+        align-items: center; /* Aligns items vertically in the center */
+        width: 100%;
+        max-width: 1024px; /* Optional: set a max-width */
+      }
+      .row-item {
+        background-color: #4caf50;
+        color: white;
+        padding: 20px;
+        margin: 10px;
+        font-size: 24px;
+      }
+      .column-container {
+        display: flex; /* This is the magic property! */
+        background-color: #f2f2f2;
+        padding: 10px;
+        border: 1px solid #ccc;
+        flex-direction: column; 
+        justify-content: space-around; /* Distributes space around items */
+        align-items: center; /* Aligns items horizontally in the center */
+        height: 600px; /* Set a height to see the vertical alignment effect */
+        width: 100%;
+        max-width: 1024px; /* Optional: set a max-width */
+      }
+      .column-item {
+        background-color: #3498db; /* Changed color to differentiate */
+        color: white;
+        padding: 20px;
+        margin: 10px;
+        font-size: 24px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 class="heading">Flex Box in CSS</h1>
+
+    <h2 class="subheading">Flex direction: row</h2>
+    <div class="row-container">
+      <div class="row-item">1</div>
+      <div class="row-item">2</div>
+      <div class="row-item">3</div>
+      <div class="row-item">4</div>
+      <div class="row-item">5</div>
+    </div>
+
+    <h2 class="subheading">Flex direction: column</h2>
+    <div class="column-container">
+      <div class="column-item">1</div>
+      <div class="column-item">2</div>
+      <div class="column-item">3</div>
+      <div class="column-item">4</div>
+    </div>
+  </body>
+</html>

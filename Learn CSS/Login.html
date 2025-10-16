@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login Page</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      /* 1. Using CSS variables for an easy-to-manage color scheme */
+      :root {
+        --background-color: #121212;
+        --card-background: #1e1e1e;
+        --input-background: #2a2a2a;
+        --text-color: #e0e0e0;
+        --primary-color: #6200ea;
+        --primary-hover-color: #7f39fb;
+        --border-color: #444;
+        --border-focus-color: var(--primary-color);
+      }
+
+      /* 2. A common reset and setting a modern font */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box; /* Makes layout math more intuitive */
+      }
+
+      body {
+        font-family: "Poppins", sans-serif; /* A cleaner, more modern font */
+        background: var(--background-color);
+        color: var(--text-color);
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      /* 3. Adding a subtle shadow and cleaner look to the card */
+      .card {
+        background: var(--card-background);
+        border-radius: 12px;
+        padding: 40px; /* More generous padding */
+        width: 350px;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5); /* Adds depth */
+        border: 1px solid var(--border-color);
+      }
+
+      /* 4. Softer heading color */
+      h2 {
+        color: var(--text-color);
+        text-align: center;
+        margin-bottom: 25px;
+        font-weight: 500;
+      }
+
+      form {
+        display: flex;
+        flex-direction: column;
+      }
+
+      /* 5. Improved input fields with transitions and focus state */
+      input {
+        margin-bottom: 20px;
+        padding: 12px;
+        border-radius: 8px;
+        background: var(--input-background);
+        border: 1px solid var(--border-color);
+        color: var(--text-color);
+        font-family: inherit; /* Ensures the input uses the body's font */
+        font-size: 1rem;
+        transition: border-color 0.3s ease, box-shadow 0.3s ease; /* Smooth transition */
+      }
+
+      input::placeholder {
+        color: #888; /* Lighter placeholder text */
+      }
+
+      input:focus {
+        outline: none; /* Removes the default browser outline */
+        border-color: var(--border-focus-color);
+        box-shadow: 0 0 8px var(--border-focus-color); /* Glow effect on focus */
+      }
+
+      /* 6. A more vibrant button with a smoother hover effect */
+      button {
+        background: var(--primary-color);
+        border-radius: 8px;
+        padding: 12px;
+        color: white;
+        border: none; /* Buttons don't need borders if they have a background */
+        font-size: 1.1rem;
+        font-weight: 500;
+        cursor: pointer;
+        transition: background-color 0.3s ease; /* Smooth transition for hover */
+      }
+
+      button:hover {
+        background: var(--primary-hover-color);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="card">
+      <h2>Login</h2>
+      <form>
+        <input type="email" name="" id="" placeholder="Email" />
+        <input type="password" name="" id="" placeholder="Password" />
+        <button type="submit">Login</button>
+      </form>
+    </div>
+  </body>
+</html>

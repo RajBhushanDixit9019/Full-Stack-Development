@@ -1,0 +1,100 @@
+:root {
+  --primary-color: #e67e22;      /* A nice, warm orange for headings */
+  --text-color: #34495e;         /* A dark, soft blue/gray for text */
+  --background-color: #f7f9f9;   /* Background for the card itself */
+  --border-color: #e0e0e0;       /* A light gray for borders */
+  --card-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  --card-hover-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+  --card-border-radius: 12px;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #ecf0f1;
+    height: 100vh;
+}
+h1{
+    text-align: center;
+    margin: 20px 0;
+    color: var(--primary-color);
+}
+.card-container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 auto;
+    max-width: 1200px;
+    padding: 20px;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.recipe-card{
+  width: 100%;
+  max-width: 350px; /* Slightly smaller to fit more on one line */
+  background-color: var(--background-color);
+  border: 1px solid var(--border-color);
+  border-radius: var(--card-border-radius); /* Using the radius variable */
+  box-shadow: var(--card-shadow);           /* Using the shadow variable */
+  overflow: hidden; /* This keeps the image corners contained */
+  transition: box-shadow 0.3s ease, transform 0.3s ease; /* Smooth transition for the hover effect */
+  display: flex;
+  flex-direction: column;
+}
+/* Bonus hover effect using variables */
+.recipe-card:hover {
+  transform: translateY(-5px); /* Lift the card up slightly */
+  box-shadow: var(--card-hover-shadow);
+}
+
+.recipe-card img {
+  width: 100%;
+  height: 200px; /* Give all images a fixed height */
+  object-fit: cover; /* Ensures images cover the area without stretching */
+  display: block;
+}
+
+.card-content {
+  padding: 25px;
+  flex-grow: 1; /* Allows content to fill available space, making cards equal height */
+}
+
+.card-content h1 {
+  font-size: 1.5em;
+  color: var(--primary-color); /* Using the primary color variable */
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+.card-content h2 {
+  font-size: 1.2em;
+  color: var(--primary-color); /* Also using the primary color */
+  margin-top: 20px;
+  margin-bottom: 10px;
+  border-bottom: 2px solid var(--border-color); /* Using border color */
+  padding-bottom: 5px;
+}
+
+.card-content p {
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+/* Styling for both lists */
+.card-content ul,
+.card-content ol {
+  padding-left: 20px;
+}
+
+.card-content li {
+  margin-bottom: 8px;
+  line-height: 1.5;
+}

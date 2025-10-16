@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern Minimal Nav Bar</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            /* Use a modern font stack that picks the best native font */
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: #f4f4f4;
+            /* Use a softer text color than pure black */
+            color: #333;
+        }
+        .container{
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .logo{
+            font-size: 24px;
+            font-weight: bold;
+            color: #333;
+        }
+        .navbar{
+            display:flex;
+            justify-content: space-between;
+            align-items: center;
+
+            /* --- Modern Changes --- */
+            padding: 10px; /* Increased padding for more whitespace */
+            background-color: #ffffff; /* Clean white background */
+            border-radius: 10px; /* Softer, rounded corners */
+            /* Removed the hard border, replaced with a subtle shadow for depth */
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            /* Removed fixed height to let padding define the size */
+        }
+        .navbar ul{
+            list-style: none;
+            display: flex;
+            align-items:center;
+            gap: 20px; /* Increased gap for better link spacing */
+            background: #f4f4f4;
+            padding: 10px 15px;
+            border-radius: 8px; /* Rounded corners for the link container */
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05); /* Subtle shadow for depth */
+        }
+        .navbar ul li a{
+            text-decoration: none;
+            /* Softer color for inactive links */
+            color: #555;
+            font-weight: 500; /* Medium font weight is often used in modern UI */
+            /* Add transition for a smooth color change on hover */
+            transition: color 0.3s ease;
+        }
+        .navbar ul li a:hover{
+            /* On hover, change the color to our accent color. No background/padding change. */
+            color: #007bff;
+        }
+        .btn{
+            padding: 12px 24px;
+            /* A modern, vibrant blue for the call-to-action button */
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            /* More rounded corners are a common modern style */
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: bold;
+            /* Add transition for a smooth hover effect */
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+        .btn:hover{
+            /* Make the button slightly darker on hover */
+            background-color: #0056b3;
+            /* Add a slight upward lift for a nice interaction */
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <nav class="navbar">
+            <span class="logo">MyBrand</span>
+            <ul>
+                <li>
+                    <a href="#">Home</a>
+                </li>
+                <li>
+                    <a href="#">Features</a>
+                </li>
+                <li>
+                    <a href="#">Pricing</a>
+                </li>
+            </ul>
+            <button class="btn">Get Started</button>
+        </nav>
+    </div>
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact</title>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <ul>
+          <li>
+            <a href="Portfolio.html">Home</a>
+          </li>
+          <li>
+            <a href="aboutme.html">About Me</a>
+          </li>
+          <li>
+            <a href="contact.html">Contact</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <h1>Contact Page</h1>
+      <form action="">
+        <fieldset>
+          <legend>Your Message</legend>
+
+          <!-- Input for Subject -->
+          <div>
+            <label for="subject">Subject:</label><br />
+            <input type="text" id="subject" name="subject" required />
+          </div>
+          <br />
+
+          <!-- Textarea for the message -->
+          <div>
+            <label for="message">Message:</label><br />
+            <textarea
+              id="message"
+              name="user_message"
+              rows="8"
+              cols="40"
+              required
+            ></textarea>
+          </div>
+          <br />
+        </fieldset>
+
+        <!-- Submit Button -->
+        <button type="submit">Send Message</button>
+      </form>
+    </main>
+    <footer>
+      <address>
+        Contact us at:
+        <a href="mailto:support@example.com">support@example.com</a><br />
+        Visit us at:<br />
+        123 Web Dev Street<br />
+        Codeville, CA 90210
+      </address>
+    </footer>
+  </body>
+</html>

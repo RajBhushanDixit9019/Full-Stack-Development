@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Feature Cards</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: Arial, sans-serif;
+      }
+      body {
+        padding: 40px 20px;
+        background-color: #f4f7f6;
+        display: flex;
+        justify-content: center;
+      }
+      .card-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: stretch;
+        gap: 20px; /* Modern way to add space */
+        max-width: 1200px;
+      }
+      .card {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        background-color: white;
+        border: 1px solid #ddd;
+        padding: 25px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        border-radius: 14px;
+        /* TWEAK: Using flex property for better responsiveness */
+        flex: 1 1 300px;
+        /* TWEAK: Transition on the base class */
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+      .card:hover {
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+        transform: translateY(-5px);
+      }
+      .card h3 {
+        margin-bottom: 20px;
+        color: #333;
+        font-size: 22px;
+      }
+      .card ul {
+        list-style: none;
+        margin: 0 0 20px 0; /* Add bottom margin */
+        padding: 0;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+      }
+      .card ul li {
+        color: #333;
+        background-color: #e9ecef;
+        padding: 5px 12px;
+        border-radius: 15px;
+        font-size: 14px;
+        transition: background-color 0.3s ease;
+      }
+      .card ul li:hover {
+        background-color: #ced4da;
+      }
+      .card button {
+        margin-top: auto; /* Pushes button to bottom */
+        padding: 12px;
+        background-color: #4caf50;
+        color: white;
+        border: none;
+        cursor: pointer;
+        border-radius: 8px;
+        font-size: 16px;
+        font-weight: bold;
+        transition: background-color 0.3s ease;
+      }
+      .card button:hover {
+        background-color: #45a049;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="card-container">
+      <div class="card">
+        <h3>Basic Plan</h3>
+        <ul>
+          <li>Feature 1</li>
+          <li>Feature 2</li>
+        </ul>
+        <button>Select Plan</button>
+      </div>
+      <div class="card">
+        <h3>Prime Plan</h3>
+        <ul>
+          <li>Feature 1</li>
+          <li>Feature 2</li>
+          <li>Feature 3</li>
+          <li>Feature 4</li>
+        </ul>
+        <button>Select Plan</button>
+      </div>
+      <div class="card">
+        <h3>Pro Plan</h3>
+        <ul>
+          <li>Feature 1</li>
+          <li>Feature 2</li>
+          <li>Feature 3</li>
+          <li>Feature 4</li>
+          <li>Feature 5</li>
+          <li>Feature 6</li>
+        </ul>
+        <button>Select Plan</button>
+      </div>
+    </div>
+  </body>
+</html>
