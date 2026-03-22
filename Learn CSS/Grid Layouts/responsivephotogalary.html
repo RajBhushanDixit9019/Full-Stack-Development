@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Responsive Photo Gallery</title>
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        font-family: Arial, sans-serif;
+        padding: 20px;
+        background-color: #f4f4f4;
+      }
+      h1 {
+        text-align: center;
+        margin-bottom: 20px;
+        font-size: 34px;
+        color: #333;
+        background-color: #e2e2e2;
+        border-radius: 8px;
+        width: fit-content;
+        margin-left: auto;
+        margin-right: auto;
+        padding: 10px 20px; /* Removed redundant padding line */
+      }
+      .gallery-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        grid-auto-rows: 200px;
+        gap: 8px;
+        margin-top: 20px;
+      }
+
+      .item {
+        /* 1. Moved the transition here */
+        /* This animates any change to the 'transform' property */
+        transition: transform 0.9s ease;
+
+        /* 2. Moved the cursor here */
+        /* This makes the entire item clickable, not just the image */
+        cursor: pointer;
+
+        /* 3. Added for performance & z-index */
+        /* 'will-change' tells the browser to optimize for this animation */
+        will-change: transform;
+        /* 'position' and 'z-index' establish a stacking context */
+        position: relative;
+        z-index: 1;
+      }
+
+      .item:hover {
+        transform: scale(1.05);
+        /* Lifts the item above its neighbors */
+        z-index: 10;
+
+        /* Optional: Adds a "lifted" effect, looks great with scale */
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+      }
+
+      .item img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 8px;
+        border: 2px solid #ccc;
+        display: block;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Responsive Photo Gallery</h1>
+    <div class="gallery-container">
+      <div class="item">
+        <img
+          src="https://images.unsplash.com/photo-1503023345310-bd7c1de61c7d?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=2070"
+          alt="Man standing on a rocky ledge looking at mountains"
+        />
+      </div>
+      <div class="item">
+        <img
+          src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=2070"
+          alt="Misty lake reflecting mountains and trees"
+        />
+      </div>
+      <div class="item">
+        <img
+          src="https://images.unsplash.com/photo-1511765224389-37f0e77cf0eb?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=2070"
+          alt="Person surfing a large wave"
+        />
+      </div>
+      <div class="item">
+        <img
+          src="https://images.unsplash.com/photo-1500534623283-312aade485b7?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=2070"
+          alt="Winding road through a green forest"
+        />
+      </div>
+      <div class="item">
+        <img
+          src="https://images.unsplash.com/photo-1494526585095-c41746248156?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=2070"
+          alt="Colorful houses next to a canal"
+        />
+      </div>
+      <div class="item">
+        <img
+          src="https://images.unsplash.com/photo-1470770841072-f978cf4d019e?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=2070"
+          alt="Wooden cabin on a lake with mountain reflection"
+        />
+      </div>
+      <div class="item">
+        <img
+          src="https://images.unsplash.com/photo-1519681393784-d120267933ba?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=2070"
+          alt="Snowy mountain peak under a starry sky"
+        />
+      </div>
+      <div class="item">
+        <img
+          src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=2070"
+          alt="People working on laptops in a modern office"
+        />
+      </div>
+    </div>
+  </body>
+</html>

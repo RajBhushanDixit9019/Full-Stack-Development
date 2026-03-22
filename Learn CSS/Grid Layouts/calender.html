@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calender using Grid Layouts</title>
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif;
+      }
+      body {
+        padding: 20px;
+        background-color: #f4f4f4;
+      }
+      h1 {
+        text-align: center;
+        margin-bottom: 20px;
+        font-size: 34px;
+        color: #333;
+        background-color: #e2e2e2;
+        border-radius: 8px;
+        width: fit-content;
+        margin-left: auto;
+        margin-right: auto;
+        padding: 10px 20px;
+      }
+
+      .calendar-grid {
+        display: grid;
+        grid-template-columns: repeat(7, 1fr);
+        gap: 8px;
+        margin-top: 20px;
+        border: 2px solid #000000;
+        border-radius: 8px;
+        padding: 10px;
+        /* justify-items and align-items are not needed
+           if the children fill the space. */
+      }
+
+      /* This is the corrected selector */
+      .day-header {
+        font-weight: bold;
+        text-align: center;
+        background-color: #dcdcdc;
+        padding: 10px 0; /* Removed duplicate */
+        border-radius: 4px;
+        border: 1px solid #000000;
+        /* Removed fixed width/height and flex properties */
+      }
+
+      .date-cell {
+        text-align: center;
+        padding: 15px 0;
+        background-color: #ffffff;
+        border-radius: 4px;
+        border: 1px solid #ccc; /* Added a light border */
+      }
+      .date-cell:hover {
+        background-color: #e6e6e6; /* Added hover effect */
+        cursor: pointer;
+        scale: 1.05;
+      }
+
+      #day-1 {
+        /* Starts in the 4th column (Wednesday) */
+        grid-column: 4;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Calender using Grid Layouts</h1>
+
+    <div class="calendar-grid">
+      <div class="day-header">Sun</div>
+      <div class="day-header">Mon</div>
+      <div class="day-header">Tue</div>
+      <div class="day-header">Wed</div>
+      <div class="day-header">Thu</div>
+      <div class="day-header">Fri</div>
+      <div class="day-header">Sat</div>
+
+      <div class="date-cell" id="day-1">1</div>
+      <div class="date-cell">2</div>
+      <div class="date-cell">3</div>
+      <div class="date-cell">4</div>
+      <div class="date-cell">5</div>
+      <div class="date-cell">6</div>
+      <div class="date-cell">7</div>
+      <div class="date-cell">8</div>
+      <div class="date-cell">9</div>
+      <div class="date-cell">10</div>
+      <div class="date-cell">11</div>
+      <div class="date-cell">12</div>
+      <div class="date-cell">13</div>
+      <div class="date-cell">14</div>
+      <div class="date-cell">15</div>
+      <div class="date-cell">16</div>
+      <div class="date-cell">17</div>
+      <div class="date-cell">18</div>
+      <div class="date-cell">19</div>
+      <div class="date-cell">20</div>
+      <div class="date-cell">21</div>
+      <div class="date-cell">22</div>
+      <div class="date-cell">23</div>
+      <div class="date-cell">24</div>
+      <div class="date-cell">25</div>
+      <div class="date-cell">26</div>
+      <div class="date-cell">27</div>
+      <div class="date-cell">28</div>
+      <div class="date-cell">29</div>
+      <div class="date-cell">30</div>
+      <div class="date-cell">31</div>
+    </div>
+  </body>
+</html>

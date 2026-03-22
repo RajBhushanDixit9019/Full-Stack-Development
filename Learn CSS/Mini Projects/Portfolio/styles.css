@@ -1,0 +1,81 @@
+/* Modern Dark Purple Portfolio - Style Sheet
+  1. Import Google Font
+  2. Define :root variables for colors and typography
+*/
+
+/* 1. Import Inter Font */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+/* 2. Define :root variables 
+   (Or use [data-theme="dark"] if you plan to have a theme switcher)
+*/
+:root {
+  /* Page & Backgrounds */
+  --color-bg-page: #161320;
+  --color-bg-card: #211D33;
+
+  /* Text */
+  --color-text-primary: #F0EDFF;
+  --color-text-muted: rgba(240, 237, 255, 0.7);
+
+  /* Actions & Interactions */
+  --color-action-primary: #A78BFA;
+  --color-action-hover: #C4B5FD;
+  --color-action-text: #37306B; /* Text for on-color buttons */
+
+  /* --- FONTS --- */
+  
+  /* Font Family */
+  --font-primary: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+
+  /* Font Weights */
+  --fw-regular: 400;
+  --fw-medium: 500;
+  --fw-semibold: 600;
+  --fw-bold: 700;
+
+  /* Font Sizes */
+  --fs-body: 1rem;       /* 16px */
+  --fs-h1: 3rem;         /* 48px */
+  --fs-h2: 2rem;         /* 32px */
+  --fs-h3: 1.25rem;      /* 20px */
+  --fs-small: 0.875rem;  /* 14px */
+}
+
+/* Basic setup to apply the root variables.
+  You can add this to your main stylesheet.
+*/
+body {
+  font-family: var(--font-primary);
+  font-weight: var(--fw-regular);
+  font-size: var(--fs-body);
+  line-height: 1.6;
+  color: var(--color-text-primary);
+  background-color: var(--color-bg-page);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0 0 0.5em 0;
+  line-height: 1.2;
+}
+
+h1 {
+  font-weight: var(--fw-bold);
+  font-size: var(--fs-h1);
+}
+
+h2 {
+  font-weight: var(--fw-semibold);
+  font-size: var(--fs-h2);
+}
+
+h3 {
+  font-weight: var(--fw-medium);
+  font-size: var(--fs-h3);
+}
+
+p {
+  margin: 0 0 1.5em 0;
+}
