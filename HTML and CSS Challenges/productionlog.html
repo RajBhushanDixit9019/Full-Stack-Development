@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Produnction Log</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
+            padding: 20px;
+            
+        }
+        .log-item{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: #fff;
+            padding: 15px 20px;
+            margin-bottom: 10px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            border-radius: 4px;
+            transition: background 0.3s ease;
+            cursor: pointer;
+        }
+        .log-item:hover{
+            background: #f0f0f0;
+        }
+        .log-info{
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .log-icon{
+            font-size: 24px;
+            color: #4a90e2;
+        }
+        .log-text{
+            font-size: 16px;
+            color: #333;
+        }
+        .log-time{
+            font-size: 14px;
+            color: #666;
+        }
+    </style>
+  </head>
+  <body>
+    <div class="log-item">
+      <div class="log-info">
+        <span class="log-icon">🚚</span>
+        <span class="log-text">New shipment of Jawar Husk arrived</span>
+      </div>
+      <div class="log-time">10:45 AM</div>
+    </div>
+
+    <div class="log-item">
+      <div class="log-info">
+        <span class="log-icon">⚙️</span>
+        <span class="log-text"
+          >Pelletizer Machine #2 started production cycle</span
+        >
+      </div>
+      <div class="log-time">11:00 AM</div>
+    </div>
+
+    <div class="log-item">
+      <div class="log-info">
+        <span class="log-icon">⚠️</span>
+        <span class="log-text"
+          >Low stock alert: Peanut Shells below 5 tons</span
+        >
+      </div>
+      <div class="log-time">11:30 AM</div>
+    </div>
+
+    <div class="log-item">
+      <div class="log-info">
+        <span class="log-icon">📦</span>
+        <span class="log-text"
+          >Order #1042 packaged and ready for dispatch</span
+        >
+      </div>
+      <div class="log-time">12:15 PM</div>
+    </div>
+
+    <div class="log-item">
+      <div class="log-info">
+        <span class="log-icon">🌡️</span>
+        <span class="log-text"
+          >Moisture level quality check passed for Batch A-49</span
+        >
+      </div>
+      <div class="log-time">01:00 PM</div>
+    </div>
+
+    <div class="log-item">
+      <div class="log-info">
+        <span class="log-icon">⏸️</span>
+        <span class="log-text"
+          >Scheduled maintenance: Conveyor belt inspection</span
+        >
+      </div>
+      <div class="log-time">02:30 PM</div>
+    </div>
+
+    <div class="log-item">
+      <div class="log-info">
+        <span class="log-icon">🚛</span>
+        <span class="log-text"
+          >Dispatch confirmed for client 'Agro Industries'</span
+        >
+      </div>
+      <div class="log-time">03:15 PM</div>
+    </div>
+
+    <div class="log-item">
+      <div class="log-info">
+        <span class="log-icon">⚡</span>
+        <span class="log-text"
+          >Power fluctuation detected, backup generator standby</span
+        >
+      </div>
+      <div class="log-time">04:05 PM</div>
+    </div>
+
+    <div class="log-item">
+      <div class="log-info">
+        <span class="log-icon">📥</span>
+        <span class="log-text"
+          >Daily Tally Prime inventory export synced to database</span
+        >
+      </div>
+      <div class="log-time">05:00 PM</div>
+    </div>
+
+    <div class="log-item">
+      <div class="log-info">
+        <span class="log-icon">🔒</span>
+        <span class="log-text">Shift ended, factory floor secured</span>
+      </div>
+      <div class="log-time">06:00 PM</div>
+    </div>
+  </body>
+</html>

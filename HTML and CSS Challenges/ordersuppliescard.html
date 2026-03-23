@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Order Supplies Card</title>
+
+  <style>
+    /* ---------- CSS Variables (easy theme tweaks) ---------- */
+    :root{
+      --primary:#4a90e2;
+      --primary-dark:#2962ff;
+      --bg-gradient-start:#f5f7fa;
+      --bg-gradient-end:#c3cfe2;
+      --card-bg:#fff;
+      --border-color:#4a90e2;
+      --text-primary:#333;
+      --text-secondary:#666;
+    }
+
+    /* ---------- Simple reset (avoid the all‑elements *) ---------- */
+    html,body{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+    }
+
+    /* ---------- Page layout ---------- */
+    body{
+      font-family:'Gill Sans','Gill Sans MT',Calibri,'Trebuchet MS',sans-serif;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      min-height:100vh;               /* use min‑height to avoid overflow on very tall pages */
+      background:linear-gradient(135deg,var(--bg-gradient-start),var(--bg-gradient-end));
+    }
+
+    /* ---------- Card component (semantic article) ---------- */
+    article.material-card{
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      width: min(300px, 90vw);       /* responsive width, never exceeds viewport */
+      max-width:300px;                /* keep the original max size */
+      padding:1.25rem;                /* use rem for spacing */
+      background:var(--card-bg);
+      border:2px solid var(--border-color);
+      border-radius:0.5rem;
+      box-shadow:0 0.25rem 0.5rem rgba(0,0,0,0.2);
+    }
+
+    /* ---------- Image (square container, object‑fit) ---------- */
+    .card-img{
+      width:100px;
+      height:100px;
+      aspect-ratio:1/1;               /* ensures a perfect square even if width/height change */
+      object-fit:cover;
+      border-radius:0.5rem;
+      margin-bottom:0.75rem;
+    }
+
+    /* ---------- Text ---------- */
+    .card-title{
+      color:var(--text-primary);
+      font-size:1.125rem;
+      margin-bottom:0.5rem;
+      text-align:center;
+    }
+    .card-desc{
+      color:var(--text-secondary);
+      font-size:0.95rem;
+      text-align:center;
+      margin-bottom:1rem;
+    }
+
+    /* ---------- Button ---------- */
+    .order-btn{
+      margin-top:auto;                /* push to bottom of flex column */
+      width:100%;
+      padding:0.625rem 1.25rem;
+      background:var(--primary);
+      color:#fff;
+      border:none;
+      border-radius:0.25rem;
+      font-weight:bold;
+      cursor:pointer;
+      font-size:1rem;
+      transition:background-color .3s ease;
+    }
+    .order-btn:hover{background:var(--primary-dark);}
+    .order-btn:focus-visible{
+      outline:3px solid var(--primary-dark);
+      outline-offset:2px;
+    }
+
+    /* ---------- Optional media query (tiny tweak for very short viewports) ---------- */
+    @media (max-height:500px) {
+      article.material-card{
+        height:auto;                 /* let content dictate height on short screens */
+        min-height:350px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <article class="material-card" aria-labelledby="card-title">
+    <img src="husk.jpg"
+         alt="Photo of a premium Jawar husk ready for order"
+         class="card-img">
+
+    <h3 id="card-title" class="card-title">Jawar Husk (Premium)</h3>
+
+    <p class="card-desc">
+      Sourced from local farms. Currently running low due to high production
+      output this week. Need to restock by Friday.
+    </p>
+
+    <button type="button" class="order-btn">Place Order</button>
+  </article>
+</body>
+</html>

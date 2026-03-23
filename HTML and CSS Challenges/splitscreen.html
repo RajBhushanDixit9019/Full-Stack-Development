@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SaaS Split-Screen</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        font-family:
+          "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+      }
+      .split-screen {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        width: 100vw;
+        padding: 20px;
+      }
+      .left-branding,
+      .right-login {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        flex: 1; /* Makes them share the 100vw equally */
+        height: 100%; /* Make sure they fill the height */
+      }
+      .left-branding {
+        align-items: center;
+        gap: 20px;
+        background-color: #4a90e2; /* Gives the left side a solid color */
+        color: white;
+      }
+      .right-login {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        justify-content: center;
+        gap: 15px;
+        padding: 30px;
+        border-radius: 12px;
+      }
+      .login-box {
+        display: flex;
+        flex-direction: column;
+        align-items: center; /* Centers the login box horizontally */
+        background-color: #f5f7fa; /* Gives the right side a light gray color */
+        padding: 30px;
+        border-radius: 12px;
+        margin:10px;
+      }
+      .login-box h2 {
+        color: #333;
+        margin-bottom: 20px;
+      }
+      .login-box input {
+        padding: 12px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        font-size: 16px;
+        transition: border-color 0.3s ease;
+        outline: none;
+        width: 50%;
+        margin-bottom: 10px;
+        outline: none;
+        text-align: center;
+      }
+      .login-box button {
+        padding: 10px 20px;
+        background: #4a90e2;
+        color: #fff;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-weight: bold;
+        width: 50%;
+        transition: background 0.3s ease;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="split-screen">
+      <div class="left-branding">
+        <h1>Biomass Ops Platform</h1>
+        <p>Internal factory management system.</p>
+      </div>
+
+      <div class="right-login">
+        <div class="login-box">
+          <h2>Welcome Back, Raj</h2>
+          <input type="password" placeholder="Enter PIN" />
+          <button>Login</button>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
