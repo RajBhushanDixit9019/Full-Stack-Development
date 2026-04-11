@@ -1,81 +1,750 @@
-/* Modern Dark Purple Portfolio - Style Sheet
-  1. Import Google Font
-  2. Define :root variables for colors and typography
-*/
-
-/* 1. Import Inter Font */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
-
-/* 2. Define :root variables 
-   (Or use [data-theme="dark"] if you plan to have a theme switcher)
-*/
-:root {
-  /* Page & Backgrounds */
-  --color-bg-page: #161320;
-  --color-bg-card: #211D33;
-
-  /* Text */
-  --color-text-primary: #F0EDFF;
-  --color-text-muted: rgba(240, 237, 255, 0.7);
-
-  /* Actions & Interactions */
-  --color-action-primary: #A78BFA;
-  --color-action-hover: #C4B5FD;
-  --color-action-text: #37306B; /* Text for on-color buttons */
-
-  /* --- FONTS --- */
-  
-  /* Font Family */
-  --font-primary: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-
-  /* Font Weights */
-  --fw-regular: 400;
-  --fw-medium: 500;
-  --fw-semibold: 600;
-  --fw-bold: 700;
-
-  /* Font Sizes */
-  --fs-body: 1rem;       /* 16px */
-  --fs-h1: 3rem;         /* 48px */
-  --fs-h2: 2rem;         /* 32px */
-  --fs-h3: 1.25rem;      /* 20px */
-  --fs-small: 0.875rem;  /* 14px */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-/* Basic setup to apply the root variables.
-  You can add this to your main stylesheet.
-*/
 body {
-  font-family: var(--font-primary);
-  font-weight: var(--fw-regular);
-  font-size: var(--fs-body);
+  /* This paints the entire screen your dark slate color! */
+  background-color: var(--bg-main);
+
+  /* Sets the default text color for the whole site */
+  color: var(--text-muted);
+
+  /* Applies your Inter font to everything so you don't have to keep repeating it */
+  font-family: inter, sans-serif;
+}
+
+:root {
+  /* Background Colors */
+  --bg-main: #161320;
+  /* The deep dark slate for the whole page */
+  --bg-card: #201d2e;
+  /* Slightly lighter slate for project cards */
+  --bg-input: #262236;
+  /* The background color inside the contact form inputs */
+
+  /* Accent Colors */
+  --primary-purple: #A78BFA;
+  /* The purple from your 'Download CV' and 'Contact' buttons */
+  --primary-hover: #9a7bff;
+  /* A slightly darker purple for button hover states */
+
+  /* Typography Colors */
+  --text-primary: #ffffff;
+  /* Pure white for all headings (H1, H2, H3) */
+  --text-muted: #b3b0c4;
+  /* The light gray/lavender color for paragraph text */
+  --text-light: #F0EDFF;
+  /* Off-white for navbar links */
+
+  /* Borders and Radii */
+  --radius-sm: 6px;
+  /* For input fields and tech tags */
+  --radius-md: 16px;
+  /* For the project cards */
+  --radius-pill: 25px;
+  /* For the rounded 'Download CV' button */
+
+  /* Layout & Spacing */
+  --max-width: 1200px;
+  /* Keeps the main content centered on huge monitors */
+  --transition: 0.3s ease;
+  /* Standard speed for hover animations */
+}
+
+.main-container {
+  display: grid;
+  grid-template-columns: 1fr;
+
+  /* Removed rigid row heights so sections flow naturally with their content */
+}
+
+.section {
+  background-color: var(--bg-main);
+  color: var(--text-primary);
+  text-align: center;
+  padding: 80px 0;
+  /* Add generous top/bottom padding instead of rigid viewport heights */
+  overflow: hidden;
+  /* This will help with any content that might overflow the section */
+  /*display: flex; We can use flexbox INSIDE the grid to center the text! 
+  justify-content: center;
+  align-items: center;*/
+}
+
+/* Header Section Styles*/
+
+.top-navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 40px;
+  /* Gives the inside of the pill some breathing room */
+  font-family: inter, sans-serif;
+  background-color: var(--bg-card);
+
+  /* --- THE FLOATING PILL LOOK --- */
+  width: 90%;
+  max-width: 1000px;
+  /* Keeps it from stretching too wide on massive screens */
+  margin: 20px auto 0 auto;
+  /* Centers it perfectly */
+  border-radius: var(--radius-pill);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+  /* Adds a drop shadow so it pops! */
+
+  /* --- THE STICKY MAGIC --- */
+  position: sticky;
+  top: 20px;
+  /* When scrolling, it will stop and stick 20px from the top edge */
+  z-index: 1000;
+  /* Guarantees it stays ON TOP of your project images when scrolling */
+}
+
+.logo {
+  font-weight: bold;
+  font-size: 24px;
+  color: var(--primary-purple);
+}
+
+.logo:hover {
+  color: var(--primary-hover);
+  transition: var(--transition);
+  transform: translateY(-3px);
+}
+
+.nav-links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  list-style: none;
+}
+
+.nav-links li a {
+  color: var(--text-light);
+  text-decoration: none;
+  transition: var(--transition);
+  border-radius: var(--radius-pill);
+  padding: 10px 20px;
+  white-space: nowrap;
+  display: inline-block;
+}
+
+.nav-links li a:hover {
+  background-color: var(--primary-purple);
+  color: var(--bg-main);
+  border: none;
+  border-radius: var(--radius-pill);
+  cursor: pointer;
+  transition: var(--transition);
+  text-decoration: none;
+}
+
+.nav-cta-btn {
+  background-color: var(--primary-purple);
+  color: var(--text-primary);
+  padding: 10px 20px;
+  border: none;
+  border-radius: var(--radius-pill);
+  cursor: pointer;
+  transition: var(--transition);
+  text-decoration: none;
+}
+
+.nav-cta-btn:hover {
+  background-color: var(--primary-hover);
+  transform: translateY(-3px);
+}
+
+
+/* --- 1. THE DESKTOP VIEW --- */
+.hero-section {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+
+  /* The Fix: Give the sides 5% breathing room, but let the Grid handle the top/bottom */
+  padding: 0 5%;
+
+  /* Keep the content from spreading way too far apart on giant 4K gaming monitors */
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* --- 2. THE MOBILE VIEW (The Senior Developer Touch) --- */
+@media (max-width: 1024px) {
+
+  .hero-section,
+  .about-content {
+    /* Instantly flips the side-by-side layout into a top-to-bottom stack! */
+    flex-direction: column;
+    text-align: center;
+    /* Shrink the gap a bit so the image isn't too far below the text on phones */
+    gap: 30px;
+  }
+
+  .hero-text,
+  .about-text {
+    align-items: center;
+    text-align: center;
+  }
+
+  .hero-text p,
+  .about-text p {
+    text-align: center;
+  }
+
+  /* We also need to shrink that massive H1 font so it fits on a phone screen! */
+  .hero-text h1 {
+    font-size: 30px;
+    /* Down from 50px */
+    white-space: normal;
+    /* Allow wrapping */
+    border-right: none;
+    /* Disable cursor so it doesn't float weirdly on next line */
+    animation: none;
+    /* Disable animation as it breaks with wrapping */
+  }
+
+  .hero-text h1::after {
+    content: none;
+  }
+
+  /* Temporary hide nav-links layout break until burger menu */
+  .nav-links,
+  .nav-cta-btn {
+    display: none;
+  }
+}
+
+/* 1. The Container: Left-aligned and responsive */
+.hero-text,
+.about-text {
+  flex: 1;
+  min-width: 0;
+  /* Prevents the text from blowing out the container */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  /* Forces the content to align neatly to the left */
+  gap: 15px;
+}
+
+.hero-image,
+.about-image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* 2. The Headline: Smooth shrinking and infinite typing */
+.hero-text h1 {
+  font-size: clamp(22px, 3.2vw, 38px);
+  color: var(--primary-purple);
+
+  /* Typing Animation Basics */
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 4px solid var(--primary-purple);
+  width: max-content;
+  /* Forces exact fit of text length */
+
+
+
+
+  /* Adjusted to exactly 27 steps to match the 27 characters in your name! */
+  animation:
+    typing 8s steps(27, end) infinite,
+    blink-caret 0.8s step-end infinite;
+}
+
+/* THE BULLETPROOF FIX */
+.hero-text h1::after {
+  content: "\00a0";
+}
+
+/* The Smooth Infinite Loop Keyframes */
+@keyframes typing {
+
+  0%,
+  10% {
+    max-width: 0;
+  }
+
+  40%,
+  60% {
+    max-width: 800px;
+  }
+
+  /* Vastly exceeds text needs, but stops gracefully due to max-content */
+  90%,
+  100% {
+    max-width: 0;
+  }
+}
+
+@keyframes blink-caret {
+
+  from,
+  to {
+    border-color: transparent;
+  }
+
+  50% {
+    border-color: var(--primary-purple);
+  }
+}
+
+/* 3. The Paragraph */
+.hero-text p {
+  font-size: 20px;
+  /* Scaled down slightly so it doesn't fight the H1 for attention */
+  text-align: left;
+  /* Changed from center to match the H1 alignment */
+  color: var(--text-muted);
   line-height: 1.6;
-  color: var(--color-text-primary);
-  background-color: var(--color-bg-page);
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
 }
 
-h1, h2, h3, h4, h5, h6 {
-  margin: 0 0 0.5em 0;
-  line-height: 1.2;
+/* 4. The Button */
+.primary-btn {
+  background-color: var(--primary-purple);
+  color: var(--bg-main);
+  /* Dark text on the light purple button looks sharp! */
+  padding: 12px 32px;
+  /* Adjusted padding to look like a modern pill button */
+  border: none;
+  border-radius: 35px;
+  cursor: pointer;
+  transition: background-color var(--transition), transform var(--transition);
+  font-size: 16px;
+  font-weight: bold;
+  text-decoration: none;
 }
 
-h1 {
-  font-weight: var(--fw-bold);
-  font-size: var(--fs-h1);
+.primary-btn:hover {
+  background-color: var(--primary-hover);
+  transform: translateY(-3px);
+  /* Makes the button float up slightly when clicked */
 }
 
-h2 {
-  font-weight: var(--fw-semibold);
-  font-size: var(--fs-h2);
+/* Group the shared styles */
+.hero-image img,
+.about-image img {
+  /* 1. Responsive Sizing */
+  width: 100%;
+  height: auto;
+
+  /* 2. Fix the aspect ratio */
+  object-fit: cover;
+  opacity: 1;
+
+  /* 3. A subtle purple glow */
+  border-radius: var(--radius-pill);
+  filter: drop-shadow(0 15px 25px rgba(167, 139, 250, 0.4));
+
+  /* 4. Smooth hover prep */
+  transition: transform var(--transition), box-shadow var(--transition);
 }
 
-h3 {
-  font-weight: var(--fw-medium);
-  font-size: var(--fs-h3);
+/* Group the shared hover effects */
+.hero-image img:hover,
+.about-image img:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 25px 45px rgba(178, 152, 255, 0.25);
 }
 
-p {
-  margin: 0 0 1.5em 0;
+/* Ensure exactly equal maximums */
+.hero-image img,
+.about-image img {
+  max-width: 450px;
+}
+
+/* Aboutme Section Styles*/
+.section-title {
+  font-size: 32px;
+  color: var(--primary-purple);
+  margin-bottom: 20px;
+}
+
+.about-content {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 50px;
+  padding: 0 5%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.about-text p {
+  font-size: 15px;
+  /* Scaled down slightly so it doesn't fight the section title for attention */
+  text-align: left;
+  /* Changed from center to match the section title alignment */
+  color: var(--text-muted);
+  line-height: 1.6;
+  margin-bottom: 20px;
+  opacity: 0.8;
+  /* Adds a touch of softness to the text */
+}
+
+/* My Projects Section Styles*/
+.projects-header {
+  margin-bottom: 50px;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 20px;
+}
+
+.section-description {
+  color: var(--text-muted);
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.projects-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 5%;
+}
+
+.project-card {
+  background-color: var(--bg-card);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  transition: transform var(--transition), box-shadow var(--transition);
+  text-align: center;
+}
+
+.project-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+.project-image-wrapper {
+  width: 100%;
+  aspect-ratio: 16/9;
+  overflow: hidden;
+}
+
+.project-image-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.project-card:hover .project-image-wrapper img {
+  transform: scale(1.05);
+  /* Smooth zoom effect on hover */
+}
+
+.project-info {
+  padding: 25px;
+}
+
+.project-title {
+  font-size: 20px;
+  color: var(--text-primary);
+  margin-bottom: 10px;
+}
+
+.tech-tags {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+  margin-bottom: 15px;
+}
+
+.tag {
+  background-color: rgba(167, 139, 250, 0.1);
+  color: var(--primary-purple);
+  padding: 4px 8px;
+  border-radius: var(--radius-sm);
+  font-size: 11px;
+  font-weight: bold;
+}
+
+.tag:hover {
+  background-color: var(--primary-purple);
+  color: var(--bg-main);
+}
+
+.project-description {
+  color: var(--text-muted);
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+/* Contact Us Section Styles*/
+.contact-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 80px;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 5% 50px 5%;
+}
+
+@media (max-width: 1024px) {
+  .contact-container {
+    flex-direction: column;
+    gap: 40px;
+  }
+}
+
+.contact-message,
+.contact-form-wrapper {
+  flex: 1;
+  width: 100%;
+}
+
+.contact-message {
+  align-self: center;
+}
+
+.contact-message p {
+  font-size: 18px;
+  font-weight: 500;
+  color: var(--text-primary);
+  text-align: center;
+  /* Exactly as requested in the mockup */
+  line-height: 1.5;
+  margin: 0 auto;
+  max-width: 350px;
+}
+
+.contact-form-wrapper .contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.form-group label {
+  font-size: 15px;
+  color: var(--text-primary);
+  opacity: 0.8;
+  font-weight: 400;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 12px 15px;
+  border-radius: var(--radius-md);
+  background-color: var(--bg-input);
+  color: var(--text-primary);
+  border: 1px solid transparent;
+  font-size: 15px;
+  font-family: inter, sans-serif;
+  transition: var(--transition);
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: var(--primary-purple);
+  background-color: var(--bg-card);
+  /* Slightly lighter on focus */
+}
+
+/* Specific styling for the Submit Button to match the mockup (Overriding .primary-btn) */
+.contact-form .submit-btn {
+  width: fit-content;
+  align-self: center;
+  /* Right align the button */
+  padding: 10px 24px;
+  border-radius: var(--radius-pill);
+  /* Not a pill shape */
+  background-color: #B59EFE;
+  /* Lighter vivid purple from the mockup */
+  color: var(--bg-main);
+  font-weight: 500;
+  border: none;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.contact-form .submit-btn:hover {
+  transform: translateY(-2px);
+  opacity: 0.9;
+}
+
+/* Footer Section Styles*/
+.site-footer {
+  padding: 60px 5%;
+}
+
+.footer-container {
+  display: flex;
+  flex-direction: row; 
+  justify-content: space-between;
+  align-items: center;
+  gap: 100px; /* Big gap to match the mockup */
+  padding: 0 5%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer-nav {
+  display: flex;
+  justify-content: flex-start;
+  width: auto;
+}
+
+.footer-nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column; 
+  gap: 15px; 
+  align-items: flex-start;
+}
+
+.footer-nav ul li a {
+  color: var(--text-primary); /* Pure white to match mockup */
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 16px;
+  transition: all var(--transition); 
+  border-radius: 0;
+  padding: 0; 
+  white-space: nowrap;
+  display: inline-block;
+}
+
+.footer-nav ul li a:hover {
+  color: var(--primary-purple); 
+  background-color: transparent;
+  transform: translateX(5px); 
+}
+
+/* Footer Socials Styling */
+.footer-socials {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 25px; 
+}
+
+.social-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform var(--transition);
+}
+
+.social-link img {
+  width: 45px; 
+  height: 45px;
+  object-fit: contain;
+  transition: transform var(--transition), filter var(--transition);
+}
+
+.social-link:hover {
+  transform: translateY(-4px) scale(1.05); 
+  filter: drop-shadow(0 5px 15px rgba(255, 255, 255, 0.2));
+}
+
+.vertical-divider {
+  width: 1px;
+  height: 38px; 
+  background-color: rgba(255, 255, 255, 0.25); 
+  border-radius: 2px;
+}
+
+/* Footer Contact Styling */
+.footer-contact {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* Mockup has these left-aligned */
+  text-align: left;
+  gap: 15px; 
+}
+
+.contact-name {
+  color: var(--text-primary);
+  font-size: 16px;
+  font-weight: 500;
+  margin: 0;
+}
+
+.contact-phone {
+  margin: 0;
+}
+
+.contact-phone a {
+  color: var(--text-primary); /* White in the mockup */
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 500;
+  transition: color var(--transition);
+}
+
+.contact-phone a:hover {
+  color: var(--primary-hover);
+  text-decoration: underline; 
+}
+
+.contact-address {
+  color: var(--text-primary); /* White in the mockup */
+  font-size: 16px;
+  font-weight: 500;
+  font-style: normal; 
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* Footer Bottom Strip */
+.footer-bottom {
+  text-align: center;
+  padding-top: 30px;
+  margin-top: 50px;
+  border-top: 1px solid rgba(255, 255, 255, 0.05); /* Faint separator line */
+}
+
+.footer-bottom p {
+  color: var(--text-muted);
+  font-size: 14px;
+  margin: 0;
+  opacity: 0.7;
+}
+
+/* Make footer stack gracefully on mobile screens */
+@media (max-width: 900px) {
+  .footer-container {
+    flex-direction: column;
+    gap: 40px;
+    text-align: center;
+  }
+
+  .footer-contact {
+    align-items: center; /* Center everything instead of right-align on small screens */
+    text-align: center;
+  }
 }

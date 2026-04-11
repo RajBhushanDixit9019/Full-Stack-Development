@@ -3,36 +3,42 @@
   <head>
     <title>Grid Layouts Introduction</title>
     <style>
-      .grid-conainer {
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
-        grid-template-rows: 1fr 1fr 1fr;
-        gap: 1em;
-
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
       }
-      .item {
-        padding: 2em;
-        background-color: blue;
+      
+      .main-container {
+        display: grid;
+        grid-template-columns: 1fr; /* One single column taking up the whole width */
+        
+        /* Here is the magic! We define all 5 rows right here: */
+        grid-template-rows: 100vh 100vh 100vh 100vh 300px; 
+      }
+      
+      .section {
+        background-color: #161320;
         color: white;
         text-align: center;
-        border-radius: 8px;
         font-size: 2em;
+        border: 1px solid #fffdfd;
+        
+        /* Notice we deleted height and width here! Grid handles it now. */
+        display: flex; /* We can use flexbox INSIDE the grid to center the text! */
+        justify-content: center;
+        align-items: center;
       }
-
-
+     
     </style>
   </head>
   <body>
-    <div class="grid-conainer">
-      <div class="item item-1">1</div> 
-      <div class="item">2</div>
-      <div class="item">3</div>
-      <div class="item">4</div>
-      <div class="item">5</div>
-      <div class="item">6</div>
-      <div class="item">7</div>
-      <div class="item">8</div>
-      <div class="item">9</div>
+    <div class="main-container">
+      <div class="section" id="header">Header</div> 
+      <div class="section" id="aboutme">About Me</div>
+      <div class="section" id="myprojects">My Projects</div>
+      <div class="section" id="contactus">Contact Us</div>
+      <div class="section" id="footer">Footer</div>
     </div>
   </body>
 </html>
